@@ -41,7 +41,8 @@ def homography(pts, goal, img):
     return out
 
 def crop(img):
-    return img[512:2512, 1016:3016]
+    #return img[512:2512, 1016:3016]
+    return img[0:2000, 0:2000]
 
 def save_img(img):
     path = "data/corrected_images" + images[0][15:]
@@ -52,7 +53,8 @@ cur_point = (0,0)
 #img = None
 pts = []
 images = get_images('data/to_correct/')
-goal_points = np.array([[1016, 512], [3016, 512], [1016, 2512], [3016, 2512]])
+#goal_points = np.array([[1016, 512], [3016, 512], [1016, 2512], [3016, 2512]])
+goal_points = np.array([[0,0], [2000, 0], [0,2000], [2000,2000]])
 
 while(1):
     if len(images) > 0:
