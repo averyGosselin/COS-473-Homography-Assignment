@@ -1,10 +1,8 @@
 <h1>Homographinder</h1>
 
-<br>
 <h2>Description</h2>
 <p>This project was completed by Avery Gosselin for an assignment in COS 473 at the University of Maine in Orono. With this tool, users will be able to compile a list of images to be corrected (homographized into a square) following a simply, marginally intuitive process.</p>
 
-<br>
 <h2>Installation</h2>
 <h3>Dependencies</h3>
 <ul>
@@ -13,7 +11,6 @@
 </ul>
 <p>To install this program, clone the repository and ensure that the dependencies are installed. This may or may not work with other versions of both OpenCV and Numpy, I am not sure (let me know!).</p>
 
-<br>
 <h2>Usage</h2>
 <h3>Set Up</h3>
 <p>Before running, you should replace the images in the to_correct folder with your desired data set. The file names should not matter, so long as they are JPEG format (or maybe other formats, I haven't tested very much...). Once you have all of your desired data here, you may proceed to the next step.</p>
