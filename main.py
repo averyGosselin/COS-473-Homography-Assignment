@@ -14,6 +14,7 @@ import os
 #       to the data/corrected_images folder.
 #######################################################################################
 
+# This method will be triggered when an image is clicked, it will add a point to the image and append the click coordinates to the point list
 def click(event, x, y, flags, param):
     global cur_point 
 
@@ -28,34 +29,36 @@ def click(event, x, y, flags, param):
         pts.append(cur_point)
         print(pts)
 
+# Gets and returns the images from a given path
 def get_images(path):
     full_list = os.listdir(path)
     for i in range(0, len(full_list)):
         full_list[i] = path + full_list[i]
     return full_list
 
+# Calculate the homography and return the warped image
 def homography(pts, goal, img):
     pts = np.array([pts])
     h, status = cv.findHomography(pts, goal)
     out = cv.warpPerspective(img, h, (img.shape[1], img.shape[0]))
     return out
 
+# Crop a given image to 2000x2000 pixels
 def crop(img):
-    #return img[512:2512, 1016:3016]
     return img[0:2000, 0:2000]
 
+# Save a given image to the data/corrected_images
 def save_img(img):
     path = "data/corrected_images" + images[0][15:]
     cv.imwrite(path, img)
 
 
 cur_point = (0,0)
-#img = None
 pts = []
 images = get_images('data/to_correct/')
-#goal_points = np.array([[1016, 512], [3016, 512], [1016, 2512], [3016, 2512]])
 goal_points = np.array([[0,0], [2000, 0], [0,2000], [2000,2000]])
 
+# Main driver of the code
 while(1):
     if len(images) > 0:
         img = cv.imread(images[0])
