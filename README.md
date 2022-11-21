@@ -28,3 +28,8 @@
 
 Yes it is weird, no it is not that sensible, but it WORKS.
 </p>
+
+<h2>Sources</h2>
+<ul>
+    <li>All uncorrected images sourced from Dr. Ken Bundy and Dr. Peter Nelson of the Schoodic Institute</li>
+</ul>
